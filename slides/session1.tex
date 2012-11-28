@@ -3,10 +3,17 @@
 \usepackage{listings}
 \usepackage{tikz}
 \usepackage{graphicx}
+\usepackage{color}
 
 \usetikzlibrary{arrows,shapes}
 
 \usetheme{Warsaw}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
 
 \title{ICPC Sessions \\
     OR \\
@@ -29,6 +36,7 @@
 \begin{frame}
     \frametitle{What is the ACM ICPC?}
     \begin{itemize}
+            \pause
         \item The ACM International Collegiate Programming Contest!
             \pause
         \item Team based (teams of 3)
@@ -40,6 +48,7 @@
 \begin{frame}
     \frametitle{This is how it goes...}
     \begin{itemize}
+            \pause
         \item Regionals and Finals
             \pause
         \item We are part of the Northwestern European region
@@ -49,44 +58,46 @@
         \item This means we will make Germany, Belgium, the Netherlands and others cry!
     \end{itemize}
 \end{frame}
-
-begin{frame}
-    \frametitle{What is the ACM ICPC?}
-    \begin{itemize}
-        \item The ACM International Collegiate Programming Contest!
-            \pause
-        \item Team based (teams of 3)
-            \pause
-        \item The most prestigious global programming competition (since 1977)!
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{This is how it goes...}
-    \begin{itemize}
-        \item Regionals and Finals
-            \pause
-        \item We are part of the Northwestern European region
-            \pause
-	\item Top 3 teams will qualify for the Finals in St. Petersburg
-            \pause
-        \item This means we will make Germany, Belgium, the Netherlands and others cry!
-    \end{itemize}
-\end{frame}
-
-
-
-
 
 \begin{frame}
     \frametitle{What is this about?}
     \begin{itemize}
             \pause
-        \item Algorithms; more than you did in COMP1009!
+        \item Algorithms; more than you did in previous years (if any)!
             \pause
-        \item Using algorithms to solve problems!
+        \item Actually using algorithms to solve problems!
             \pause
         \item Beating Cambridge (and everyone else)!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{How to Prepare}
+    \begin{itemize}
+            \pause
+        \item Beginners:
+            \begin{itemize}
+                    \pause
+                \item \href{http://train.usaco.org/usacogate}{USACO}, \href{http://uva.onlinejudge.org/}{UVa}, \href{http://projecteuler.com}{Project Euler} (latter not recommended)
+            \end{itemize}
+            \pause
+        \item Intermediate:
+            \begin{itemize}
+                    \pause
+                \item \url{http://poj.org}, \url{http://acm.tju.ed.cn}, \url{http://acm.sgu.ru}, \url{http://acm.timus.ru} 
+            \end{itemize}
+            \pause
+        \item Everyone:
+            \begin{itemize}
+                    \pause
+                \item \href{http://topcoder.com/tc}{Topcoder} and \href{http://codeforces.com}{Codeforces} - make accounts on both
+            \end{itemize}
+            \pause
+        \item Romanians:
+            \begin{itemize}
+                    \pause
+                \item \href{http://infoarena.ro}{Infoarena}
+            \end{itemize}
     \end{itemize}
 \end{frame}
 
@@ -111,6 +122,15 @@ begin{frame}
     \end{columns}
 \end{frame}
 
+
+\begin{frame}
+    How about this: 90\% of programmers, given 2 hours, the high-level language of their choice (including pseudocode), and a description of binary search could not implement it correctly.
+
+    \vspace{15mm}
+    \pause
+    Can you?
+\end{frame}
+
 \begin{frame}[fragile]
     \frametitle{Binary Search}
     \lstset{language=C}
@@ -121,12 +141,12 @@ begin{frame}
         while (lo < hi) {
             int mid = lo + (hi - lo) / 2;
             if (array[mid] < x)
-            lo = mid + 1;
+                lo = mid + 1;
             else hi = mid;
         }
 
         if (lo == hi && array[lo] == x)
-        return lo;
+            return lo;
         return -1;
     }
     \end{lstlisting}
@@ -153,6 +173,29 @@ begin{frame}
             \pause
         \item There is always at least one in competitions
     \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Strategies to solve}
+    \begin{itemize}
+            \pause
+        \item Most of these problems are straightforward.
+            \pause
+        \item However, most ad-hoc problems require careful reading and carefully sequencing the instructions given in the problem is usually enough to solve them.
+            \pause
+        \item Some require reasonable optimisations, and some degree of analysis to prune unnecessary steps.
+            \pause
+        \item If it's not obvious, then there's only one piece of advice I can give you:
+
+            \vspace*{\fill}
+            \begingroup
+            \centering
+            \begin{center}
+                \large \textbf{\textcolor{red}{Don't Panic!}}
+            \end{center}
+        \endgroup
+        \vspace*{\fill}
+\end{itemize}
 \end{frame}
 
 \end{document}
