@@ -1,9 +1,10 @@
-\documentclass{beamer}
+\documentclass[svgnames,dvipsnames,usenames]{beamer}
 \usepackage{alltt}
 \usepackage{listings}
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{xcolor}
 
 \usetikzlibrary{arrows,shapes}
 
@@ -133,7 +134,20 @@
 
 \begin{frame}[fragile]
     \frametitle{Binary Search}
-    \lstset{language=C}
+    \lstset{language=C,
+            basicstyle=\footnotesize\ttfamily,
+            numbers=left,
+            numberstyle=\tiny\color{gray},
+            numbersep=5pt,
+            showspaces=false,
+            showstringspaces=false,
+            breaklines=true,
+            breakatwhitespace=false,
+            keywordstyle=\color{blue},
+            commentstyle=\color{OliveGreen},
+            stringstyle=\color{mauve},
+            morekeywords={*,...},
+            moredelim=**[is][\btHL]{`}{`}}
     \begin{lstlisting}
     int binary_search(int *array, int n, int x)
     {
