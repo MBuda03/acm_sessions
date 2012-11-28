@@ -1,0 +1,106 @@
+\documentclass{beamer}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\usetikzlibrary{arrows,shapes}
+
+\usetheme{Warsaw}
+
+\title{ICPC Sessions \\
+    OR \\
+    How to Solve Problems
+}
+\author{Sebastian Claici \\
+    \texttt{sebastianclaici@gmail.com}
+}
+
+%% Styling for graphs
+%% \tikzstyle{vertex}=[circle,fill=black!25,minimum size=20pt,inner sep=0pt]
+%% \tikzstyle{edge} = [draw,thick,-]
+%% \tikzstyle{weight} = [font=\small]
+%% \tikzstyle{selected edge} = [draw,line,width=5pt,-,red!50]
+%% \tikzstyle{ignored edge} = [draw,line,width=5pt,-,black!20]
+
+\begin{document}
+\maketitle
+
+\begin{frame}
+    \frametitle{What is this about?}
+    \begin{itemize}
+            \pause
+        \item Algorithms; more than you did in COMP1009!
+            \pause
+        \item Using algorithms to solve problems!
+            \pause
+        \item Beating Cambridge (and everyone else)!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Recommended Book(s)}
+    \begin{columns}[t]
+        \begin{column}[T]{5cm}
+            \begin{itemize}
+                \item \textbf{Introduction to Algorithms}
+                    \begin{itemize}
+                        \item Thomas Cormen,\\ Charles Leiserson,\\ Ronald Riverst,\\ Clifford Stein
+                    \end{itemize}
+                \item \textbf{Algorithms in C/C++/Java/}
+                    \begin{itemize}
+                        \item Robert Sedgewick
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}[T]{5cm}
+            \includegraphics[scale=0.5]{book.jpg}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Binary Search}
+    \lstset{language=C}
+    \begin{lstlisting}
+    int binary_search(int *array, int n, int x)
+    {
+        int lo = 0, hi = n - 1;
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (array[mid] < x)
+            lo = mid + 1;
+            else hi = mid;
+        }
+
+        if (lo == hi && array[lo] == x)
+        return lo;
+        return -1;
+    }
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}   
+    \vspace*{\fill}
+    \begingroup
+    \centering
+    \begin{center}
+        \huge \textbf{Ad-hoc Problems}
+    \end{center}
+\endgroup
+\vspace*{\fill}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Characteristics}
+    \begin{itemize}
+            \pause
+        \item Most of them are very easy; some of them are very very hard
+            \pause
+        \item Don't require any special knowledge of algorithms
+            \pause
+        \item There is always at least one in competitions
+    \end{itemize}
+\end{frame}
+
+\end{document}
