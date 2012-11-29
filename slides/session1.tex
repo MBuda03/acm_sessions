@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \usetikzlibrary{arrows,shapes}
 
@@ -73,6 +75,22 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Why study this?}
+    \begin{flushleft}
+        \pause
+        \includegraphics[scale=0.2]{google.jpg}
+    \end{flushleft}
+    \begin{flushright}
+        \pause
+        \includegraphics[scale=0.3]{facebook.jpg}
+    \end{flushright}
+    \begin{flushleft}
+        \pause
+        \includegraphics[width=.4\linewidth]{microsoft.jpg}
+    \end{flushleft}
+\end{frame}
+
+\begin{frame}
     \frametitle{How to Prepare}
     \begin{itemize}
             \pause
@@ -135,19 +153,19 @@
 \begin{frame}[fragile]
     \frametitle{Binary Search}
     \lstset{language=C,
-            basicstyle=\footnotesize\ttfamily,
-            numbers=left,
-            numberstyle=\tiny\color{gray},
-            numbersep=5pt,
-            showspaces=false,
-            showstringspaces=false,
-            breaklines=true,
-            breakatwhitespace=false,
-            keywordstyle=\color{blue},
-            commentstyle=\color{OliveGreen},
-            stringstyle=\color{mauve},
-            morekeywords={*,...},
-            moredelim=**[is][\btHL]{`}{`}}
+        basicstyle=\footnotesize\ttfamily,
+        numbers=left,
+        numberstyle=\tiny\color{gray},
+        numbersep=5pt,
+        showspaces=false,
+        showstringspaces=false,
+        breaklines=true,
+        breakatwhitespace=false,
+        keywordstyle=\color{blue},
+        commentstyle=\color{OliveGreen},
+        stringstyle=\color{mauve},
+        morekeywords={*,...},
+    moredelim=**[is][\btHL]{`}{`}}
     \begin{lstlisting}
     int binary_search(int *array, int n, int x)
     {
@@ -195,7 +213,9 @@
             \pause
         \item Most of these problems are straightforward.
             \pause
-        \item However, most ad-hoc problems require careful reading and carefully sequencing the instructions given in the problem is usually enough to solve them.
+        \item However, some ad-hoc problems require careful reading. 
+            \pause
+        \item Carefully sequencing the instructions given in the problem is usually enough to solve them.
             \pause
         \item Some require reasonable optimisations, and some degree of analysis to prune unnecessary steps.
             \pause
@@ -204,12 +224,52 @@
             \vspace*{\fill}
             \begingroup
             \centering
+            \pause
             \begin{center}
                 \large \textbf{\textcolor{red}{Don't Panic!}}
             \end{center}
         \endgroup
         \vspace*{\fill}
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Practice, practice, practice...}
+    \begin{itemize}
+            \pause
+        \item To get really good at this, you need practice. \textbf{A lot} of practice.
+            \pause
+        \item So I've decided that every week I'll give you a set of \textbf{a lot} of problems so that you can practice.
+            \pause
+        \item Will usually be more than you can solve in a week, although I'd love to be proven wrong.
+            \pause
+        \item Solutions should be available one week after the problems were set.
+    \end{itemize}
+
+    \pause
+    For this week, try your hand at these questions (all ad-hoc): \url{http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=121}
+\end{frame}
+
+\begin{frame}
+    \frametitle{More Info}
+    \begin{itemize}
+            \pause
+        \item You can email me about anything related to this. I'll usually respond within a day or two.
+            \pause
+        \item All the slides, and everything we're going to do in these sessions, as well as solutions to weekly problems are on github:
+            \begin{center}
+                \href{https://github.com/sebastian-claici/acm\_sessions.git}{github.com/sebastian-claici/acm\_sessions.git}
+            \end{center}
+            \pause
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \vspace*{\fill}
+    \begin{center}
+        \huge \textbf{Thank You}
+    \end{center}
+    \vspace*{\fill}
 \end{frame}
 
 \end{document}
