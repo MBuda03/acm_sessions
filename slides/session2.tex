@@ -1,0 +1,150 @@
+\documentclass{beamer}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usetikzlibrary{arrows,shapes}
+
+\usetheme{Warsaw}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    citecolor=green,
+    filecolor=magenta,
+    urlcolor=blue
+}
+
+\title{ICPC Sessions \\
+    OR \\
+    How to Solve Problems
+}
+\author{Sebastian Claici \\
+    \texttt{sebastianclaici@gmail.com}
+}
+
+%% Styling for graphs
+%% \tikzstyle{vertex}=[circle,fill=black!25,minimum size=20pt,inner sep=0pt]
+%% \tikzstyle{edge} = [draw,thick,-]
+%% \tikzstyle{weight} = [font=\small]
+%% \tikzstyle{selected edge} = [draw,line,width=5pt,-,red!50]
+%% \tikzstyle{ignored edge} = [draw,line,width=5pt,-,black!20]
+
+\begin{document}
+\maketitle
+
+\begin{frame}
+    \frametitle{A Note on Programming Languages}
+    
+    Here's what you can use in the ACM ICPC:
+
+    \begin{itemize}
+        \item C
+        \item \only<1>{C++} \only<2>{\textcolor{red}{\textbf{C++}}}
+        \item \only<1>{Java} \only<2>{\textcolor{red}{\textbf{Java}}}
+        \item Pascal
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{A Note on Programming Languages}
+
+    Some useful tools:
+
+    \begin{itemize}
+            \pause
+        \item C++
+            \begin{itemize}
+                    \pause
+                \item The GNU toolchain - GCC and GDB
+                    \pause
+                \item Your favourite text editor (*cough* Vim *cough*) by heart.
+                    \pause
+                \item For Windows: Code::Blocks, FAR Manager, Visual Studio
+            \end{itemize}
+            \pause
+        \item Java
+            \begin{itemize}
+                    \pause
+                \item Eclipse
+                    \pause
+                \item IntelliJ IDEA
+                    \pause
+                \item NetBeans
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \vspace*{\fill}
+    \begingroup
+    \centering
+    \begin{center}
+        \huge \textbf{Complete Search}
+    \end{center}
+    \endgroup
+    \vspace*{\fill}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Strategies to Solve}
+    \begin{itemize}
+            \pause
+        \item Keep it simple.
+            \pause
+        \item Every problem can be solved through complete search.
+            \pause
+        \item The trick is to recognise those that would work in time.
+            \pause
+        \item A complete search algorithm should be the first one you think about.
+            \pause
+        \item A good rule of thumb:
+
+            \pause
+        \vspace{5mm}
+        \emph{If it's less than 100 million operations, it will work in time.}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example}
+    \Large In how many ways can you place 8 queens on a chessboard so that they do not attack each other?
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example}
+    Here's one way:
+
+    \begin{center}
+        \includegraphics[scale=0.4]{board.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ideas}
+
+    We could go over all possible ways to place the 8 queens, and check at the end whether it's valid.
+    
+    \begin{itemize}
+            \pause
+        \item 8 places on each row, with 8 rows for a total of $8^8$ possibilities.
+            \pause
+        \item Would work, but it's too slow ($8^8 = 16777216$)
+            \pause
+    \end{itemize}
+        
+    \pause
+    We can do better \pause - don't check if the current configuration isn't valid.
+
+    \begin{itemize}
+            \pause
+        \item At every point we have at most one queen placed on every row and column.
+            \pause
+        \item Reduces the search space to $8! = 40320$.
+    \end{itemize}
+\end{frame}
+
+\end{document}
